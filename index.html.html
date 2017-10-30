@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine&effect=vintage|fire-animation">
+    <title>Slideshow Messi</title>
+    <style>
+        .MySlideshow
+        {
+            display: none;
+        }
+        .fadedAnimation
+        {
+            animation:fading 10s infinite;
+        }
+        @keyframes fading
+        {
+            0%{opacity:0}
+            50%{opacity:1}
+            100%{opacity:0}
+        }
+        .Content
+        {
+            /* max-width:980px; */
+            margin:auto;
+        }
+        .Section
+        {
+            margin-top:16px !important;
+            margin-bottom:16px !important;
+        }
+    </style>
+</head>
+<body align ="center">
+        <div>
+            <h1 class ="font-effect-vintage" >Tên: Võ Văn Bình Minh</h1>
+            <h1 class ="font-effect-vintage" >MSSV: 1560340</h1>
+        </div>
+        <hr style="width: 80%">
+        <div class="Content Section" style="max-width:500px" style="background-color: gray">
+            <h1 class="font-effect-fire-animation 3d">Messi Slideshow</h1>      
+            <img class="MySlideshow fadedAnimation" src="image/Messi1.jpg" style="width:100%">
+            <img class="MySlideshow fadedAnimation" src="image/Messi2.jpg" style="width:100%">
+            <img class="MySlideshow fadedAnimation" src="image/Messi3.jpg" style="width:100%">
+            <img class="MySlideshow fadedAnimation" src="image/Messi4.jpg" style="width:100%">
+            <img class="MySlideshow fadedAnimation" src="image/Messi5.jpg" style="width:100%">
+            <img class="MySlideshow fadedAnimation" src="image/Messi6.jpg" style="width:100%">
+        </div>
+        <script>
+            var myIndex = 0;
+            carousel();
+            function carousel() {
+                var i;
+                var x = document.getElementsByClassName("MySlideshow");
+                for (i = 0; i < x.length; i++) {
+                    x[i].style.display = "none";  
+                }
+                myIndex++;
+                if (myIndex > x.length) {myIndex = 1}    
+                x[myIndex-1].style.display = "block";  
+                setTimeout(carousel, 2500);    
+            }
+        </script>
+</body>
+</html>
